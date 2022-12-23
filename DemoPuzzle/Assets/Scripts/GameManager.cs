@@ -14,10 +14,20 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        int randomList= Random.Range(0, listDadList.dadList.Count);
+        CreateObject();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    void CreateObject()
+    {
+        int randomList = Random.Range(0, listDadList.dadList.Count);
         int randomNumber = Random.Range(0, listDadList.dadList[0].gameObjects.Count);
         int randomNumber2 = Random.Range(0, listDadList.dadList[0].gameObjects.Count);
-        if (randomNumber==randomNumber2)
+        if (randomNumber == randomNumber2)
         {
             if ((randomNumber == 0))
             {
@@ -29,21 +39,12 @@ public class GameManager : MonoBehaviour
             }
             randomNumber2++;
         }
-        
+
         listDadList.dadList[randomList].gameObjects[randomNumber].SetActive(true);
         listDadList.dadList[randomList].gameObjects[randomNumber].transform.position = one.transform.position;
-         listDadList.dadList[randomList].gameObjects[randomNumber2].SetActive(true);
+        listDadList.dadList[randomList].gameObjects[randomNumber2].SetActive(true);
         listDadList.dadList[randomList].gameObjects[randomNumber].transform.position = two.transform.position;
-
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
 }
 [System.Serializable]
 public class Dad
